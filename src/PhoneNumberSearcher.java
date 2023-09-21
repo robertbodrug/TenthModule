@@ -1,29 +1,10 @@
 import java.io.File;
-import java.io.FileReader;
-import java.util.Arrays;
 
-public class PhoneNumberReader {
-
-    public static String searchNumber(File file){
-        try(FileReader reader= new FileReader(file)){
-            StringBuilder sb =new StringBuilder();
-            char[] chars = new char[256];
-            int c;
-            while ((c=reader.read(chars))>0){
-    if (c<256)chars= Arrays.copyOf(chars,c);
-    sb.append(chars);
-            }
-            return search(sb.toString());
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-        return null;
-    }
-
-    public static String search(String st) {
-        String number = "(\\d{3})-(\\d{3})-(\\d{4})";
+public class PhoneNumberSearcher {
+    public static String searchNumber(File file) {
+        //String number = "(\\d{3})-(\\d{3})-(\\d{4})";
         StringBuilder sb = new StringBuilder();
-        char[] chars = st.toCharArray();
+        char[] chars = BuffFileReader.giveString(file).toCharArray();
         if (chars.length > 13) {
             for(int i=0;i< chars.length-13;i++){
                 if((Character.isDigit(chars[i])&&Character.isDigit(chars[i+1])&&Character.isDigit(chars[i+2])&&chars[i+3]=='-'
@@ -49,4 +30,3 @@ public class PhoneNumberReader {
         return null;
     }
 }
-
