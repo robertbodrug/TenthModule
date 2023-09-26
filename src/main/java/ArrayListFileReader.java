@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ArrayListFileReader {
 
-    public static ArrayList<String> giveString(File file){
+    public static ArrayList<String> giveStrings(File file){
         try(Scanner sc= new Scanner(new FileInputStream(file))){
             ArrayList<String> ar =new ArrayList<>();
             while (sc.hasNextLine()){

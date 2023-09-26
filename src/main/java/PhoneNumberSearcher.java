@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class PhoneNumberSearcher {
     public static String searchNumber(File file) {
         StringBuilder sb = new StringBuilder();
-        ArrayList<String> strings = ArrayListFileReader.giveString(file);
+        ArrayList<String> strings = ArrayListFileReader.giveStrings(file);
         Pattern p1 = Pattern.compile("\\(\\d\\d\\d\\) \\d\\d\\d \\d\\d\\d\\d");
         Pattern p2 = Pattern.compile("\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d");
         for(String s :strings){

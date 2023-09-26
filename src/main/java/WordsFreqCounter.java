@@ -4,7 +4,7 @@ import java.util.*;
 public class WordsFreqCounter {
     public static String count(File file){
         StringBuilder stringBuilder = new StringBuilder();
-        ArrayList<String> arrayList = ArrayListFileReader.giveString(file);
+        ArrayList<String> arrayList = ArrayListFileReader.giveStrings(file);
         HashMap<String,Integer> map = new LinkedHashMap<>();
         Integer in;
         for (String si:arrayList){
